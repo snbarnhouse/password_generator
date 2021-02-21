@@ -32,19 +32,19 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
  
 
-// var passwordLength = passwordLengthSelectFunction()
-// if (passwordLength !== null) {
-//    var specialCharacters = specialCharacterPrompt()
-// }
+var passwordLength = passwordLengthSelectFunction()
+if (passwordLength !== null) {
+   var specialCharacters = specialCharacterPrompt()
+}
 
 function generatePassword() {
   passwordLength = parseInt(prompt('Please Select a Password Length Between 8 and 128 characters'))
-  // if (parseInt(passwordLength) >=8 && parseInt(passwordLength) <=128 && passwordLength !== '') {
-    //  return passwordLength
-//  } else if (passwordLength !== null) {
-    // call passwordLengthSelectFunction Again
-//  }
-//  else {
+  if (parseInt(passwordLength) >=8 && parseInt(passwordLength) <=128 && passwordLength !== '') {
+     return passwordLength
+ } else if (enter <8 || enter > 128) {
+    enter = parseInt(prompt("You must choose between 8 and 128"));
+ }
+ else {
   // Confirms for user choices
   confirmNumberchoices = confirm("Would you like your password to contain numbers?");
   confirmLowercase = confirm("Would you like your password to contain lowercase letters?");
@@ -70,11 +70,4 @@ function generatePassword() {
 }
 console.log(result);
 return result.join("");
-}
-// };
-// //If they don't choose from criteria
-// if (!confirmNumberchoices && !confirmLowercase && !confirmUppercase && !confirmSpecialcharacters) {
-//   alert ("Please choose from the criteria.")
-// }
-
-
+}}
