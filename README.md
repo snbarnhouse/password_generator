@@ -1,8 +1,9 @@
 # 03 JavaScript: Password Generator
 
-Made using JavaScript, CSS, and HTML
+Made using JavaScript, CSS, and HTML.
+https://snbarnhouse.github.io/password_generator/
 
-C:\Users\snbar\Homework\test_copy\password_generator\screenshot.png 
+![Alt text] (C:\Users\snbar\Homework\test_copy\password_generator\screenshot.png)
 
 
 
