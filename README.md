@@ -1,12 +1,10 @@
 # 03 JavaScript: Password Generator
 
-Made using JavaScript, CSS, and HTML.
+Made using JavaScript, CSS, and HTML. User can choose a password between 8 and 128 and can include upper case or lower case letters, special characters, or numbers.
+
 https://snbarnhouse.github.io/password_generator/
 
-![image] (C:\Users\snbar\Homework\test_copy\password_generator\screenshot.png)
-C:\Users\snbar\Homework\test_copy\password_generator\screenshot.png
-C:\Users\snbar\Homework\test_copy\password_generator\screenshot.jpg
-C:\Users\snbar\Homework\test_copy\password_generator\screenshot.jpg
+![password_generator](https://user-images.githubusercontent.com/77131387/108644346-95079180-747c-11eb-827c-5a74b15160f7.png)
 ## Your Task
 
 This week’s homework requires you to modify starter code to create an application that enables employees to generate random passwords based on criteria that they’ve selected. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean and polished, responsive user interface that adapts to multiple screen sizes.
