@@ -13,6 +13,7 @@ var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"
 var specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "=", "+", "[", "{", "]", "}", ";", ":", "'", "<", ">", "?", "/", "|"];
 var combineCharacters= [];
 var result = [];
+//function ask user for number of characters they must choose between 8 and 128
 function passwordLengthSelectFunction() {
   var passwordLength = prompt('Please Select a Password Length Between 8 and 128 characters')
   if (parseInt(passwordLength) >=8 && parseInt(passwordLength) <=128 && passwordLength !== '') {
@@ -24,7 +25,6 @@ function passwordLengthSelectFunction() {
 }
 // Write password to the #password input
 function writePassword() {
-  // passwordLengthSelect()
   console.log(passwordLength)
   console.log(confirmNumberchoices)
   console.log(confirmLowercase)
@@ -36,10 +36,7 @@ function writePassword() {
 }
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword)
-// var passwordLength = passwordLengthSelectFunction()
-// if (passwordLength !== null) {
-//    var specialCharacters = specialCharacterPrompt()
-// }
+//confirm criteria they would like included in password
 function generatePassword() {
   passwordLength = passwordLengthSelectFunction()
   if (passwordLength && passwordLength !== null) {
@@ -56,6 +53,7 @@ function generatePassword() {
     'Would you like your password to contain special characters?'
   )
 }
+//generate password from selected criteria
   if (confirmNumberchoices) {
     combineCharacters = combineCharacters.concat(numberChoices)
   }
@@ -68,11 +66,14 @@ function generatePassword() {
   if (confirmLowercase) {
     combineCharacters = combineCharacters.concat(lowerCase)
   }
+  //combine all characters
   console.log(combineCharacters)
+  //for loop
   for (var i = 0; i < passwordLength; i++) {
     const randomIndex = Math.floor(Math.random() * combineCharacters.length)
     result.push(combineCharacters[randomIndex])
   }
+  //log and display password
   console.log(result)
   return result.join('')
 }
