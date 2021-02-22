@@ -13,6 +13,15 @@ var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"
 var specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "=", "+", "[", "{", "]", "}", ";", ":", "'", "<", ">", "?", "/", "|"];
 var combineCharacters= [];
 var result = [];
+function passwordLengthSelectFunction() {
+  var passwordLength = prompt('Please Select a Password Length Between 8 and 128 characters')
+  if (parseInt(passwordLength) >=8 && parseInt(passwordLength) <=128 && passwordLength !== '') {
+    return passwordLength
+  } else if (passwordLength !== null) {
+    // call passwordLengthSelectFunction Again
+    return passwordLengthSelectFunction()
+  }
+}
 // Write password to the #password input
 function writePassword() {
   // passwordLengthSelect()
@@ -21,53 +30,49 @@ function writePassword() {
   console.log(confirmLowercase)
   console.log(confirmSpecialcharacters)
   console.log(confirmUppercase)
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
+  var password = generatePassword()
+  var passwordText = document.querySelector('#password')
+  passwordText.value = password
 }
-
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
- 
-
+generateBtn.addEventListener('click', writePassword)
 // var passwordLength = passwordLengthSelectFunction()
 // if (passwordLength !== null) {
 //    var specialCharacters = specialCharacterPrompt()
 // }
-
 function generatePassword() {
-  passwordLength = parseInt(prompt('Please Select a Password Length Between 8 and 128 characters'))
-//   if (parseInt(passwordLength) >=8 && parseInt(passwordLength) <=128 && passwordLength !== '') {
-//      return passwordLength
-//  } else if (enter <8 || enter > 128) {
-//     enter = parseInt(prompt("You must choose between 8 and 128"));
-//  }
-//  else {
-  // Confirms for user choices
-  confirmNumberchoices = confirm("Would you like your password to contain numbers?");
-  confirmLowercase = confirm("Would you like your password to contain lowercase letters?");
-  confirmUppercase = confirm("Would you like your password to contain uppercase letters?");
-  confirmSpecialcharacters = confirm("Would you like your password to contain special characters?");
-  if (confirmNumberchoices){
+  passwordLength = passwordLengthSelectFunction()
+  if (passwordLength && passwordLength !== null) {
+  confirmNumberchoices = confirm(
+    'Would you like your password to contain numbers?'
+  )
+  confirmLowercase = confirm(
+    'Would you like your password to contain lowercase letters?'
+  )
+  confirmUppercase = confirm(
+    'Would you like your password to contain uppercase letters?'
+  )
+  confirmSpecialcharacters = confirm(
+    'Would you like your password to contain special characters?'
+  )
+}
+  if (confirmNumberchoices) {
     combineCharacters = combineCharacters.concat(numberChoices)
   }
-  if (confirmSpecialcharacters){
+  if (confirmSpecialcharacters) {
     combineCharacters = combineCharacters.concat(specialCharacters)
   }
-  if (confirmUppercase){
+  if (confirmUppercase) {
     combineCharacters = combineCharacters.concat(upperCase)
   }
-  if (confirmLowercase){
+  if (confirmLowercase) {
     combineCharacters = combineCharacters.concat(lowerCase)
   }
-  
   console.log(combineCharacters)
-  for (var i = 0; i<passwordLength; i++) {
-  const randomIndex = Math.floor(Math.random() * combineCharacters.length);
-  result.push(combineCharacters[randomIndex])
-}
-console.log(result);
-return result.join("");
+  for (var i = 0; i < passwordLength; i++) {
+    const randomIndex = Math.floor(Math.random() * combineCharacters.length)
+    result.push(combineCharacters[randomIndex])
+  }
+  console.log(result)
+  return result.join('')
 }
